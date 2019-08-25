@@ -86,10 +86,10 @@ WSGI_APPLICATION = 'btre.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'lmhdb',
-        'USER': 'postgres',
-        'PASSWORD': 'admin',
-        'HOST': 'localhost'
+        # 'NAME': 'lmhdb',
+        # 'USER': 'postgres',
+        # 'PASSWORD': 'admin',
+        # 'HOST': 'localhost'
     }
 
 }
