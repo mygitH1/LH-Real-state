@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 
 import os
 import django_heroku
-import decouple
+from decouple import config 
 import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -91,7 +91,15 @@ DATABASES = {
         'PASSWORD': 'admin',
         'HOST': 'localhost'
     }
+
 }
+DATABASES['default'] = dj_database_url.config(default='postgres://ercqyqugxrvzew:57860d142b7cd63ea4dac75c0066500741834ad032ddc376971dfbc44e9964b5@ec2-107-20-155-148.compute-1.amazonaws.com:5432/d9e4af9qvh67dp')
+
+db_from_env = dj_database_url.config(conn_max_age=600)
+DATABASES['default'].update(db_from_env)
+
+
+
 
 
 # Password validation
